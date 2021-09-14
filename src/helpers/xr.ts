@@ -11,5 +11,12 @@ export const initXR = async (
 
   experience.camera.position = new Vector3(0, 0, -5);
 
+  defaultExperience.input.xrCamera.onViewMatrixChangedObservable.add(
+    (eventData) => {
+      const t = new Date().getMilliseconds();
+      t % 500 == 0 ? console.log(eventData) : null;
+    }
+  );
+
   return defaultExperience;
 };

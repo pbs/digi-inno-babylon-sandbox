@@ -9,11 +9,13 @@ import {
   MeshBuilder,
   StandardMaterial,
   SceneLoader,
+  SixDofDragBehavior,
 } from "@babylonjs/core";
 import "@babylonjs/inspector";
 import "@babylonjs/loaders/glTF";
 import { TransformableCubeNode, TransformableSphereNode } from "./helpers/mesh";
 import { setupGroundMaterial } from "./helpers/material";
+import { initXR } from "./helpers/xr";
 import duckUrl from "./assets/duck.gltf";
 
 export const createScene = async (
@@ -58,8 +60,11 @@ export const createScene = async (
   );
   greenSphere.position = new Vector3(5, 5, 10);
 
+  greenSphere.addBehavior(new SixDofDragBehavior());
+
   await SceneLoader.ImportMeshAsync("", duckUrl, undefined, scene);
 
   scene.debugLayer.show();
+  await initXR(ground, scene);
   return scene;
 };
