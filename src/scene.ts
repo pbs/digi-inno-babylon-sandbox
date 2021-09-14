@@ -15,6 +15,7 @@ import "@babylonjs/loaders/glTF";
 import { TransformableCubeNode, TransformableSphereNode } from "./helpers/mesh";
 import { setupGroundMaterial } from "./helpers/material";
 import duckUrl from "./assets/duck.gltf";
+import { initXR } from "./helpers/xr";
 
 export const createScene = async (
   engine: Engine,
@@ -61,5 +62,6 @@ export const createScene = async (
   await SceneLoader.ImportMeshAsync("", duckUrl, undefined, scene);
 
   scene.debugLayer.show();
+  await initXR(ground, scene);
   return scene;
 };
