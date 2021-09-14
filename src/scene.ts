@@ -7,16 +7,10 @@ import {
   Color4,
   HemisphericLight,
   MeshBuilder,
-  SceneLoader,
   StandardMaterial,
-  SixDofDragBehavior,
 } from "@babylonjs/core";
-import "@babylonjs/inspector";
-import "@babylonjs/loaders/glTF";
 import { TransformableCubeNode, TransformableSphereNode } from "./helpers/mesh";
 import { setupGroundMaterial } from "./helpers/material";
-import { initXR } from "./helpers/xr";
-import duckUrl from "./assets/duck.gltf";
 
 export const createScene = async (
   engine: Engine,
@@ -48,7 +42,6 @@ export const createScene = async (
     scene
   );
 
-  scene.debugLayer.show();
   flatSpaceCamera.attachControl(canvas);
 
   const redBox = new TransformableCubeNode("red-box", scene, Color3.Red(), 10);
@@ -61,10 +54,5 @@ export const createScene = async (
   );
   greenSphere.position = new Vector3(5, 5, 10);
 
-  await SceneLoader.ImportMeshAsync("", duckUrl, undefined, scene);
-
-  greenSphere.addBehavior(new SixDofDragBehavior());
-
-  await initXR(ground, scene);
   return scene;
 };
