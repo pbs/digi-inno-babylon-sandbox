@@ -12,6 +12,8 @@ import {
 import { TransformableCubeNode, TransformableSphereNode } from "./helpers/mesh";
 import { setupGroundMaterial } from "./helpers/material";
 
+import "@babylonjs/inspector";
+
 export const createScene = async (
   engine: Engine,
   canvas: HTMLCanvasElement
@@ -54,5 +56,6 @@ export const createScene = async (
   );
   greenSphere.position = new Vector3(5, 5, 10);
 
+  scene.debugLayer.show();
   return scene;
 };
