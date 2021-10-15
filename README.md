@@ -6,7 +6,6 @@ Requirements for local dev:
 - [NodeJS 14+](https://nodejs.org/en/download/)
 
 Debugging in VR:
-- [mkcert](https://github.com/FiloSottile/mkcert)
 - [Oculus Developer Hub](https://developer.oculus.com/documentation/tools/odh/) + [ADB](https://developer.android.com/studio/releases/platform-tools)
 - [Oculus Mobile App (optional)](https://support.oculus.com/articles/getting-started/getting-started-with-quest-2/install-oculus-app-phone/)
 
@@ -50,9 +49,9 @@ Babylon has really robust external asset support. We can find examples of their 
 
 `git checkout 4-run-in-xr`
 
-WebVR requires an SSL connection to work, so we need to create a simple local certificate. Run `mkcert localhost` in your project root; it should output 2 `.pem` files to use.
+WebVR requires an SSL connection to work, so we need to create a simple local certificate. Run `npx mkcert localhost` in your project root; it should output 2 `.pem` files to use.
 
-Run `npm start:https`.
+Run `npm run start:https`. You may safely ignore the warning that this connection is insecure.
 
 1. Establish a wired USB-C connection from Oculus to your computer.
 2. A box should pop up asking to allow USB debugging. Select Allow or Always Allow.
