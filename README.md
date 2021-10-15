@@ -3,9 +3,12 @@
 Requirements for local dev:
 
 - Google Chrome
-- [Oculus Developer Hub](https://developer.oculus.com/documentation/tools/odh/) + ADB
-- Oculus Mobile App (optional)
-- mkcert (`brew install mkcert` or [follow Linux Instructions](https://github.com/FiloSottile/mkcert#linux))
+- [NodeJS 14+](https://nodejs.org/en/download/)
+
+Debugging in VR:
+- [mkcert](https://github.com/FiloSottile/mkcert)
+- [Oculus Developer Hub](https://developer.oculus.com/documentation/tools/odh/) + [ADB](https://developer.android.com/studio/releases/platform-tools)
+- [Oculus Mobile App (optional)](https://support.oculus.com/articles/getting-started/getting-started-with-quest-2/install-oculus-app-phone/)
 
 ---
 
@@ -47,7 +50,7 @@ Babylon has really robust external asset support. We can find examples of their 
 
 `git checkout 4-run-in-xr`
 
-WebVR requires an SSL connection to work, and there are workarounds to this, but what's easiest is to make a certificate and use that. Run `mkcert localhost` in your project root; it should output 2 `.pem` files to use.
+WebVR requires an SSL connection to work, so we need to create a simple local certificate. Run `mkcert localhost` in your project root; it should output 2 `.pem` files to use.
 
 Run `npm start:https`.
 
