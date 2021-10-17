@@ -49,9 +49,9 @@ Babylon has really robust external asset support. We can find examples of their 
 
 `git checkout 4-run-in-xr`
 
-WebVR requires an SSL connection to work, so we need to create a simple local certificate. Run `npx mkcert localhost` in your project root; it should output 2 `.pem` files to use.
+WebVR requires an SSL connection to work, so we'll stop our running web server (Ctrl+C in terminal) and run a script to serve the experience over HTTPS.
 
-Run `npm run start:https`. You may safely ignore the warning that this connection is insecure.
+Run `npm run start:https`, and navigate to https://localhost:8080 in your web browser if it doesn't happen automatically. You may safely ignore the warning that this connection is insecure.
 
 1. Establish a wired USB-C connection from Oculus to your computer.
 2. A box should pop up asking to allow USB debugging. Select Allow or Always Allow.

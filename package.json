@@ -26,7 +26,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config webpack.config.js",
-    "start:https": "npm start -- --http2 --https-cert localhost.pem --https-key localhost-key.pem",
+    "start:https": "webpack-dev-server --config webpack.secure.js",
     "build": "webpack --config webpack.config.prod.js"
   },
   "author": "",
