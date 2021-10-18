@@ -13,7 +13,9 @@ Debugging in VR:
 
 ## Getting Started
 
-`git checkout 1-get-started`
+* Before anything, make sure your Node.js dependencies are installed: `npm install`.
+* Once dependencies are installed, run `git checkout 1-get-started` and `npm run start`.
+    This will start serving our example application. In the case that your web browser doesn't automatically navigate to http://localhost:8080, please visit this address.
 
 A basic Babylon.js scene with ground, light source, and a couple of basic meshes. You can use the mouse to click and change the camera angle or right click to pan.
 
