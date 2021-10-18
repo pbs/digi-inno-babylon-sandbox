@@ -10,7 +10,6 @@ import {
   StandardMaterial,
   SceneLoader,
 } from "@babylonjs/core";
-import "@babylonjs/inspector";
 import "@babylonjs/loaders/glTF";
 import { TransformableCubeNode, TransformableSphereNode } from "./helpers/mesh";
 import { setupGroundMaterial } from "./helpers/material";
@@ -61,7 +60,6 @@ export const createScene = async (
 
   await SceneLoader.ImportMeshAsync("", duckUrl, undefined, scene);
 
-  scene.debugLayer.show();
   await initXR(ground, scene);
   return scene;
 };

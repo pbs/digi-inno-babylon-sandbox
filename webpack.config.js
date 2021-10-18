@@ -16,8 +16,7 @@ module.exports = {
     },
     compress: true,
     hot: true,
-    open: true,
-    https: true,
+    open: true
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".glsl"],
