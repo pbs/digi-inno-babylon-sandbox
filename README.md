@@ -10,9 +10,14 @@ Run `npm run start:https`, and navigate to https://localhost:8080 in your web br
 2. In your Oculus device, a dialog should pop up asking to allow USB debugging. Select Allow or Always Allow.
 3. Depending on the length of the USB-C cable you're using, you may want to enable WiFi connection to your device in Oculus Developer Hub. If you enable WiFi, be sure to disconnect your USB-C cable from your computer for the next step.
 4. Reverse-forward the web server port. First run `adb devices` and confirm that only one device is listed, then run `adb reverse tcp:8080 tcp:8080`
+5. Navigate to https://localhost:8080 in your Oculus browser. You have two options:
+   1. In Oculus Developer Hub, enter `https://localhost:8080` in the Oculus Browser field and click Open.
+   2. Open the Oculus browser and manually navigate to https://localhost:8080.
+6. Bypass any insecure connection warnings and explore the scene in VR.
 
 ## Debugging a scene _while_ in VR.
 
+- Be sure the Babylon Inspector is in scope (`import "@babylonjs/inspector"`) and `scene.debugLayer.show()` is called in the scene code.
 - In any Chromium browser, visit `chrome://inspect/#devices`.
 - Casting via Oculus Developer Hub or Oculus Mobile App while debugging is often more comfortable than debugging en scene.
 - leave XR mode (menu button on left controller) to explore the scene tree while in VR.
